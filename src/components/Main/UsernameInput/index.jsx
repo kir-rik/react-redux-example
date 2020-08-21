@@ -1,4 +1,4 @@
-import usernameInputPure from './usernameInputPure'
+import userNameInputPure from './userNameInputPure'
 
 const mapDispatchToProps = {
   handleChange: value => ({
@@ -6,4 +6,4 @@ const mapDispatchToProps = {
   })
 } 
 
-export default connect(undefined, mapDispatchToProps)(usernameInputPure)
+export default connect(undefined, mapDispatchToProps)(userNameInputPure)

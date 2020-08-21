@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './styles';
 
-const usernameInput = ({ handleChange }) => (
+const userNameInput = ({ handleChange }) => (
   <input className={styles.input} onChange={e => handleChange(e.target.value)} placeholder="Введите имя пользователя" />
 );
 
-usernameInput.propTypes = {
+userNameInput.propTypes = {
   handleChange: PropTypes.func,
 };
 
-usernameInput.defaultProps = {
+userNameInput.defaultProps = {
   handleChange: () => {},
 };
 
-export default usernameInput;
+export default userNameInput;
