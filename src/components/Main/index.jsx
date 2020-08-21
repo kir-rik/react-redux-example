@@ -5,12 +5,8 @@ import styles from './styles';
 
 const main = ({ handleChange }) => (
   <div className={styles.main}>
-    <UserNameInput handleChange={handleChange} />
+    <UserNameInput />
   </div>
 );
-
-main.propTypes = {
-  handleChange: PropTypes.func,
-};
 
 export default main;

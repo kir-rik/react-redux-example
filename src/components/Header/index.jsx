@@ -3,14 +3,10 @@ import PropTypes from 'prop-types';
 import UserInfo from './UserInfo';
 import styles from './styles';
 
-const header = ({ userName }) => (
+const header = () => (
   <div className={styles.header}>
-    <UserInfo userName={userName} />
+    <UserInfo />
   </div>
 );
-
-header.propTypes = {
-  userName: PropTypes.string,
-};
 
 export default header;
