@@ -1,17 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './styles';
+import usernameInputPure from './usernameInputPure'
 
-const usernameInput = ({ handleChange }) => (
-  <input className={styles.input} onChange={e => handleChange(e.target.value)} placeholder="Введите имя пользователя" />
-);
+const mapDispatchToProps = {
+  handleChange: value => ({
+    userName: value
+  })
+} 
 
-usernameInput.propTypes = {
-  handleChange: PropTypes.func,
-};
-
-usernameInput.defaultProps = {
-  handleChange: () => {},
-};
-
-export default usernameInput;
+export default connect(undefined, mapDispatchToProps)(usernameInputPure)
