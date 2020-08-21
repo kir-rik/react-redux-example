@@ -1,9 +1,10 @@
-import userNameInputPure from './userNameInputPure'
+import userNameInputPure from './userNameInputPure';
 
 const mapDispatchToProps = {
-  handleChange: value => ({
-    userName: value
-  })
-} 
+  handleChange: (value) => ({
+    userName: value,
+  }),
+};
 
-export default connect(undefined, mapDispatchToProps)(userNameInputPure)
+// подкидываем пропс handleChange, который будет складываться userName в стор
+export default connect(undefined, mapDispatchToProps)(userNameInputPure);
