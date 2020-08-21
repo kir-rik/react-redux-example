@@ -2,7 +2,7 @@ import { CHANGE_USERNAME } from '../actionTypes';
 
 // Substore USER_INFO:
 const initialState = {
-  userName: '' 
+  userName: '',
 };
 
 export default function (state = initialState, action) {
@@ -12,9 +12,11 @@ export default function (state = initialState, action) {
 
       return {
         ...state,
-        userName
+        userName,
       };
     }
+
+    // case ... все остальные экшены связанные со складыванием в этот сабстор
 
     default:
       return state;
