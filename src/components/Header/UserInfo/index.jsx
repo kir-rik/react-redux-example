@@ -1,5 +1,6 @@
+import { connect } from "react-redux";
 import userInfoPure from './userInfoPure';
 
-const mapStateToProps = (globalState) => ({ userInfo: globalState.userInfo });
+const mapStateToProps = ({ userInfoSubstore }) => ({ userName: userInfoSubstore.userName});
 
 export default connect(mapStateToProps)(userInfoPure);
