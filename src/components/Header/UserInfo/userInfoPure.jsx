@@ -1,16 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import getUserInfo from '../../../services/userInfo';
 import styles from './styles';
 
 export default class UserInfo extends React.PureComponent {
-  state = {};
+  static propTypes = {
+    updateUserInfo: PropTypes.func,
+    userInfo: PropTypes.shape({
+      userName: PropTypes.string,
+      age: PropTypes.string,
+      location: PropTypes.string,
+      picUrl: PropTypes.string,
+    }),
+  };
 
-  componentDidMount() {
-    getUserInfo().then((userInfo) => this.setState(userInfo));
+  constructor(props) {
+    super(props);
+
+    getUserInfo().then(props.updateUserInfo);
   }
 
   render() {
-    const { userName, age, location, picUrl } = this.state;
+    const { userInfo: { userName, age, location, picUrl } = {} } = this.props;
+
     return (
       <div className={styles.row}>
         <img src={picUrl} className={styles.pic} />

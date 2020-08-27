@@ -1,18 +1,18 @@
-import { CHANGE_USERNAME } from '../actionTypes';
+import { CHANGE_USERINFO } from '../actionTypes';
 
 // Substore USER_INFO:
 const initialState = {
-  userName: '' 
+  userInfo: {}
 };
 
 export default function (state = initialState, action) {
-  switch (action.type) {
-    case CHANGE_USERNAME: {
-      const { userName } = action.payload;
+  switch (action.type) {    
+    case CHANGE_USERINFO: {
+      const { userInfo } = action.payload;
 
       return {
         ...state,
-        userName
+        userInfo
       };
     }
 
