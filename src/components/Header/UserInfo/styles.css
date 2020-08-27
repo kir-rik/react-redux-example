@@ -1,2 +1,14 @@
-.userInfo {
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.pic {
+  border-radius: 50%;
+  height: 50px;
+  margin-right: 20px;
 }
