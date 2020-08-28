@@ -7,13 +7,13 @@ import styles from './styles.css';
 
 export default class UserInfo extends React.PureComponent {
   static propTypes = {
-    loadUserInfo: PropTypes.func,
+    loadUserInfo: PropTypes.func.isRequired,
     userInfo: PropTypes.shape({
       userName: PropTypes.string,
       age: PropTypes.string,
       location: PropTypes.string,
       picUrl: PropTypes.string,
-    }),
+    }).isRequired,
   };
 
   constructor(props) {

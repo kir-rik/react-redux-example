@@ -2,13 +2,13 @@ import { connect } from 'react-redux';
 import loadUserInfo from '../../../redux/actionCreators/loadUserInfo';
 import userInfoPure from './userInfoPure';
 
-const mapStateToProps = ({ userInfoSubstore }) => ({
+export const mapStateToProps = ({ userInfoSubstore }) => ({
   userInfo: userInfoSubstore.userInfo,
   isLoading: userInfoSubstore.isLoading,
   error: userInfoSubstore.error,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   loadUserInfo: (anyCallbackArgs) => dispatch(loadUserInfo(anyCallbackArgs)),
 });
 
