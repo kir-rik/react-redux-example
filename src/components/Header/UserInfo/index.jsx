@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { CHANGE_USERINFO, USERINFO_LOADING, USERINFO_LOADED, USERINFO_ERROR } from '../../../redux/actionTypes';
-import getUserInfo from '../../../services/userInfo';
+import loadUserInfo from '../../../redux/actionCreators/loadUserInfo';
 import userInfoPure from './userInfoPure';
 
 const mapStateToProps = ({ userInfoSubstore }) => ({
@@ -9,32 +8,8 @@ const mapStateToProps = ({ userInfoSubstore }) => ({
   error: userInfoSubstore.error,
 });
 
-const actionCreator = (anyCallbackArgs) => (dispatch) => {
-  dispatch({
-    type: USERINFO_LOADING,
-  });
-
-  getUserInfo()
-    .then((data) => {
-      dispatch({
-        type: USERINFO_LOADED,
-      });
-      dispatch({
-        type: CHANGE_USERINFO,
-        payload: {
-          userInfo: data,
-        },
-      });
-    })
-    .catch(() =>
-      dispatch({
-        type: USERINFO_ERROR,
-      })
-    );
-};
-
 const mapDispatchToProps = (dispatch) => ({
-  loadUserInfo: (anyCallbackArgs) => dispatch(actionCreator(anyCallbackArgs)),
+  loadUserInfo: (anyCallbackArgs) => dispatch(loadUserInfo(anyCallbackArgs)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(userInfoPure);
