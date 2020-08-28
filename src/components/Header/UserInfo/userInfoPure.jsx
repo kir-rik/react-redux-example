@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import getUserInfo from '../../../services/userInfo';
 import isEmpty from '../../../utils/isEmpty';
 import Spinner from '../../Spinner';
-import styles from './styles';
+import styles from './styles.css';
 
 export default class UserInfo extends React.PureComponent {
   static propTypes = {
