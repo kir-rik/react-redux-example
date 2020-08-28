@@ -21,7 +21,13 @@ module.exports = {
         use: {
           loader: "babel-loader",
         },
-      },
+      },            {
+        test: /\.(png|svg|jpg|gif)$/,
+        options: {
+            name: 'static/media/[name].[ext]',
+        },
+        loader: 'file-loader',
+    },
       {
         test: /\.css$/i,
         exclude: /node_modules/,
