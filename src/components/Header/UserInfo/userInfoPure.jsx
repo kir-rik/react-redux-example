@@ -22,9 +22,8 @@ export default class UserInfo extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    props.userInfoLoading();
-
     if (isEmpty(props.userInfo) && !this.props.isLoading) {
+      props.userInfoLoading();
       getUserInfo()
         .then((data) => {
           props.updateUserInfo(data);

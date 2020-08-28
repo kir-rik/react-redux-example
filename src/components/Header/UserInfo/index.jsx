@@ -9,22 +9,22 @@ const mapStateToProps = ({ userInfoSubstore }) => ({
   error: userInfoSubstore.error,
 });
 
-const mapDispatchToProps = {
-  updateUserInfo: (value) => ({
+const mapDispatchToProps = (dispatch) => ({
+  updateUserInfo: (value) => dispatch({
     type: CHANGE_USERINFO,
     payload: {
       userInfo: value,
     },
   }),
-  userInfoLoading: () => ({
+  userInfoLoading: () => dispatch({
     type: USERINFO_LOADING,
   }),
-  userInfoLoaded: () => ({
+  userInfoLoaded: () => dispatch({
     type: USERINFO_LOADED,
   }),
-  userInfoError: () => ({
+  userInfoError: () => dispatch({
     type: USERINFO_ERROR,
   }),
-};
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(userInfoPure);
