@@ -7,10 +7,7 @@ import styles from './styles';
 
 export default class UserInfo extends React.PureComponent {
   static propTypes = {
-    updateUserInfo: PropTypes.func,
-    userInfoLoading: PropTypes.func,
-    userInfoLoaded: PropTypes.func,
-    userInfoError: PropTypes.func,
+    loadUserInfo: PropTypes.func,
     userInfo: PropTypes.shape({
       userName: PropTypes.string,
       age: PropTypes.string,
@@ -22,15 +19,8 @@ export default class UserInfo extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    props.userInfoLoading();
-
     if (isEmpty(props.userInfo) && !this.props.isLoading) {
-      getUserInfo()
-        .then((data) => {
-          props.updateUserInfo(data);
-          props.userInfoLoaded();
-        })
-        .catch(() => props.userInfoError());
+      props.loadUserInfo()
     }
   }
 
